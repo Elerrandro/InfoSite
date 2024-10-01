@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <title>MENU</title>
+    </head>
+    <body>
+        <section class="section">
+            <h2><b>MENU</b></h2>
+            <br>
+            <button onclick="SalarioLiquido()"><b>SALÁRIO LIQUIDO</b></button>
+            <br><br>
+            <button onclick="CalculoINSS()"><b>DESCONTO INSS</b></button>
+            <br><br>
+            <button onclick="CalculoIR()"><b>DESCONTO IR</b></button>
+            <br><br>
+            <button onclick="Acesso()"><b>SAIR DA CONTA</b></button>
+        </section>
+        <script type="text/javascript">
+            function SalarioLiquido() {
+                window.location.href = "descontoSALARIO.html";
+            }
+            function CalculoINSS() {
+                window.location.href = "descontoINSS.html";
+            }
+            function CalculoIR() {
+                window.location.href = "descontoIR.html"
+            }
+            function Acesso() {
+                window.location.href = "index.html";
+            }
+
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape') {
+                    Acesso();
+                }
+            });
+        </script>    
+    </body>
+</html>

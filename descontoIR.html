@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Desconto IR</title>
+</head>
+<body>
+    <section class="section">
+        <h2><b>Calculo IR</b></h2>
+        <br>
+        <input type="text" placeholder="Digite seu nome" id="nome">
+        <br>
+        <input type="number" placeholder="Digite seu salário liquido" id="salario_liquido">
+        <br><br>
+        <button onclick="Calcular()"><b>CALCULAR</b></button>
+        <br>
+        <button onclick="VoltarMenu()"><b>VOLTAR</b></button>
+        <br>
+        <p id="resultado"></p>
+    </section>   
+    <script type="text/javascript">
+        function Calcular() {
+            let nome = document.getElementById("nome").value;
+            let salario_liquido = parseFloat(document.getElementById("salario_liquido").value)
+            
+            if (salario_liquido < 2000) {
+                desconto = salario_liquido * 0.30
+            } else {
+                desconto = salario_liquido * 0.40
+            }
+            let resultado = desconto
+
+            if (isNaN(salario_liquido) || nome == "") {
+                    alert("Por favor, preencha todos os campos.")
+                }
+            if (isNaN(resultado)) {
+                document.getElementById("resultado").textContent = "Por favor, preencha todos os campos."
+                return
+            }
+
+            document.getElementById("resultado").textContent = "Senho(a) " + nome + ", o seu valor IR é de R$" + desconto.toFixed(2);
+
+            document.getElementById("nome").value = "";
+            document.getElementById("salario_liquido").value = "";
+        }
+        function VoltarMenu() {
+                    window.location.href = "descontoMENU.html";
+                };
+
+        document.getElementById("nome").addEventListener('keydown', function(event) {
+            if (event.key == "Enter") 
+                Calcular()
+        });
+        document.getElementById("salario_liquido").addEventListener('keydown', function(event) {
+            if (event.key == "Enter") 
+                Calcular()
+        });
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                VoltarMenu();
+            }
+        });
+    </script>
+</body>
+</html>

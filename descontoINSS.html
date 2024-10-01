@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pr-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Desconto INSS</title>
+</head>
+<body>
+    <section class="section">
+        <h2><b>Calculo INSS</b></h2>
+        <br>
+        <input type="text" placeholder="Digite seu nome" id="nome">
+        <br>
+        <input type="number" placeholder="Digite seu salário liquido" id="salario_liquido">
+        <br>
+        <input type="number" placeholder="Digite o desconto percentual" id="desconto_percentual">
+        <br><br>
+        <button onclick="Calcular()"><b>CALCULAR</b></button>
+        <br>
+        <button onclick="VoltarMenu()"><b>VOLTAR</b></button>
+        <br>
+        <p id="desconto"></p>
+    </section>
+    <script type="text/javascript">
+        function Calcular() {
+            let nome = document.getElementById("nome").value;
+            let salario_liquido = parseFloat(document.getElementById("salario_liquido").value);
+            let desconto_percentual = parseFloat(document.getElementById("desconto_percentual").value);
+            let desconto = salario_liquido * (desconto_percentual / 100);
+
+            if (isNaN(salario_liquido) || nome == "" || isNaN(desconto_percentual)) {
+                    alert("Por favor, preencha todos os campos.")
+                }
+            if (isNaN(desconto)) {
+                document.getElementById("salario_final").textContent = "Por favor, preencha todos os campos."
+                return
+            }
+
+            document.getElementById("desconto").textContent = "Senho(a) " + nome + ", o seu desconto é de R$" + desconto.toFixed(2);
+
+            document.getElementById("nome").value = "";
+            document.getElementById("salario_liquido").value = "";
+            document.getElementById("desconto_percentual").value = "";
+            
+        }
+        function VoltarMenu() {
+                    window.location.href = "descontoMENU.html";
+                };
+
+        document.getElementById("nome").addEventListener('keydown', function(event) {
+            if (event.key == "Enter") 
+                Calcular()
+        });
+        document.getElementById("salario_liquido").addEventListener('keydown', function(event) {
+            if (event.key == "Enter") 
+                Calcular()
+        });
+        document.getElementById("desconto_percentual").addEventListener('keydown', function(event) {
+            if (event.key == "Enter") 
+                Calcular()
+        });
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                VoltarMenu();
+            }
+        });
+    </script>
+</body>
+</html>
