@@ -29,6 +29,11 @@
             function Acesso() {
                 window.location.href = "index.html";
             }
+            document.addEventListener('keydown', function(event) {
+                if (event.key == 'Escape') {
+                    Acesso();
+                }
+            });
         </script>
     </body>
 </html>

@@ -59,7 +59,7 @@
                 document.getElementById("altura").value = "";
             }
             function VoltarMENU() {
-                window.location.href = "CalculadoraMENU.html";
+                window.location.href = "calculadoraMENU.html";
             }
             document.getElementById("peso").addEventListener('keydown', function(event) {
                 if (event.key == "Enter") 
@@ -68,6 +68,11 @@
             document.getElementById("altura").addEventListener('keydown', function(event) {
                 if (event.key == "Enter") 
                     Calcular()
+            });
+            document.addEventListener('keydown', function(event) {
+                if (event.key == 'Escape') {
+                    VoltarMENU();
+                }
             });
         </script>
     </body>

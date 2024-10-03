@@ -54,6 +54,11 @@
                 if (event.key == "Enter") 
                     Calcular()
             });
+            document.addEventListener('keydown', function(event) {
+                if (event.key == 'Escape') {
+                    VoltarMenu();
+                }
+            });
         </script>
     </body>
 </html>
