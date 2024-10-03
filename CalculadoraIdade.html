@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <title>Calculadora Idade</title>
+    </head>
+    <body>
+        <section class="section">
+            <h2><b>Calculadora Idade</b></h2>
+            <br>
+            <label for=""><b>Nome</b></label>
+            <input type="text" placeholder="Escreva o nome" id="nome">
+            <br>
+            <label for=""><b>Ano de nascimento</b></label>
+            <input type="number" placeholder="Escreva o ano" id="ano">
+            <br><br>
+            <button onclick="Calcular()"><b>CALCULAR</b></button>
+            <br>
+            <button onclick="VoltarMenu()"><b>VOLTAR</b></button>
+            <br>
+            <p id="idade"></p>
+        </section>
+        <script type="text/javascript">
+            function Calcular() {
+                let nome = document.getElementById("nome").value;
+                let ano = parseInt(document.getElementById("ano").value);
+                let idade = 2024 - ano;
+
+                if (nome == "" || isNaN(ano)) {
+                    alert("Por favor, preencha todos os campos.")
+                }
+            
+                if (isNaN(idade)) {
+                    document.getElementById("idade").textContent = "Por favor, preencha todos os campos."
+                    return
+                }
+
+                document.getElementById("idade").textContent = "Senhor(a): " + nome + " a sua idade é: " + idade;
+
+                document.getElementById("nome").value = "";
+                document.getElementById("ano").value = "";
+            };
+            function VoltarMenu() {
+                window.location.href = "calculadoraMENU.html";
+            };
+           
+            document.getElementById("nome").addEventListener('keydown', function(event) {
+                if (event.key == "Enter") 
+                    Calcular()
+            });
+            document.getElementById("ano").addEventListener('keydown', function(event) {
+                if (event.key == "Enter") 
+                    Calcular()
+            });
+        </script>
+    </body>
+</html>

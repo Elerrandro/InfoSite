@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <title>MENU</title>
+    </head>
+    <body>
+        <section class="section">
+            <h2><b>Menu Calculadora</b></h2>
+            <br>
+            <label for=""><b>Calculadora IMC</b></label>
+            <button onclick="CalculadoraIMC()"><b>ENTRAR</b></button>
+            <br>
+            <label for=""><b>Calculadora Idade</b></label>
+            <button onclick="CalculadoraIdade()"><b>ENTRAR</b></button>
+            <br>
+            <label for=""><b>Calculadora</b></label>
+            <button onclick="Calculadora()"><b>ENTRAR</b></button>
+            <br><br>
+            <label for=""><b>Voltar para Menu Principal</b></label>
+            <button onclick="MenuPrincipal()"><b>VOLTAR</b></button>
+        </section>
+        <script type="text/javascript">
+            function CalculadoraIMC() {
+                window.location.href = "CalculadoraIMC.html";
+            }
+            function CalculadoraIdade() {
+                window.location.href = "CalculadoraIdade.html";
+            }
+            function Calculadora() {
+                window.location.href = "Calculadora.html"
+            }
+            function MenuPrincipal() {
+                window.location.href = "MenuPrincipal.html";
+            }
+        </script>    
+    </body>
+</html>
