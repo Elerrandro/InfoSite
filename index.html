@@ -10,8 +10,10 @@
         <section class="section">
             <h2><b>ACESSO</b></h2>
             <br>
+            <label for="nome"><b>Nome do usuário</b></label>
             <input type="text" placeholder="Escreva o nome" id="nome">
             <br><br>
+            <label for="senha"><b>Senha do usuário</b></label>
             <input type="number" placeholder="Escreva a senha" id="senha">
             <br><br>
             <button onclick="logar()"><b>LOGAR</b></button>
@@ -29,7 +31,7 @@
 
                 if (usuarioEncontrado && senha == "123") {
                     alert("ACESSO PERMITIDO!!")
-                    window.location.href = "descontoMENU.html";
+                    window.location.href = "MenuPrincipal.html";
                 } else {
                     alert("ACESSO NEGADO!!")
                     document.getElementById("nome").value = "";

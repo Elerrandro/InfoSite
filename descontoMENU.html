@@ -8,15 +8,19 @@
     </head>
     <body>
         <section class="section">
-            <h2><b>MENU</b></h2>
+            <h2><b>Menu Desconto</b></h2>
             <br>
-            <button onclick="SalarioLiquido()"><b>SALÁRIO LIQUIDO</b></button>
+            <label for=""><b>Sálario Liquido</b></label>
+            <button onclick="SalarioLiquido()"><b>ENTRAR</b></button>
+            <br>
+            <label for=""><b>Desconto INSS</b></label>
+            <button onclick="CalculoINSS()"><b>ENTRAR</b></button>
+            <br>
+            <label for=""><b>Desconto IR</b></label>
+            <button onclick="CalculoIR()"><b>ENTRAR</b></button>
             <br><br>
-            <button onclick="CalculoINSS()"><b>DESCONTO INSS</b></button>
-            <br><br>
-            <button onclick="CalculoIR()"><b>DESCONTO IR</b></button>
-            <br><br>
-            <button onclick="Acesso()"><b>SAIR DA CONTA</b></button>
+            <label for=""><b>Voltar para Menu Principal</b></label>
+            <button onclick="MenuPrincipal()"><b>VOLTAR</b></button>
         </section>
         <script type="text/javascript">
             function SalarioLiquido() {
@@ -28,8 +32,8 @@
             function CalculoIR() {
                 window.location.href = "descontoIR.html"
             }
-            function Acesso() {
-                window.location.href = "index.html";
+            function MenuPrincipal() {
+                window.location.href = "MenuPrincipal.html";
             }
 
             document.addEventListener('keydown', function(event) {

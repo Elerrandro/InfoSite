@@ -11,6 +11,16 @@ body {
     background-size: cover;
     background-position: center;
 }
+h2 {
+    text-shadow: 
+        -1px -1px 0 #000000,  
+         1px -1px 0 #000000, 
+        -1px  1px 0 #000000,  
+         1px  1px 0 #000000;  
+    color: #070ffa; 
+    font-size: 35px; 
+    font-weight: bold; 
+}
 
 .section {
     background-color: #ffffff;
@@ -53,6 +63,11 @@ input[type="text"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
+}
+label {
+    text-align: left;
+    width: 100%; /* Garante que o label ocupe toda a largura do container */
+    display: block; /* Faz com que o label se comporte como um bloco */
 }
 @media (max-width: 768px) {
     .section {
